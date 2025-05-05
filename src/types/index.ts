@@ -1,4 +1,3 @@
-
 export type UserRole = 'admin' | 'coach' | 'client';
 
 export interface User {
@@ -7,6 +6,7 @@ export interface User {
   firstName: string;
   lastName: string;
   role: UserRole;
+  password?: string; // Added for test accounts
   avatarUrl?: string;
   bio?: string;
   createdAt: Date;

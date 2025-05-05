@@ -1,7 +1,6 @@
-
 import { User, Session, Booking, Notification } from '../types';
 
-// Mock Users
+// Mock Users with test credentials
 export const mockUsers: User[] = [
   {
     id: '1',
@@ -9,6 +8,7 @@ export const mockUsers: User[] = [
     firstName: 'Admin',
     lastName: 'User',
     role: 'admin',
+    password: 'password123', // Test password for admin
     avatarUrl: 'https://randomuser.me/api/portraits/men/1.jpg',
     createdAt: new Date('2023-01-01'),
   },
@@ -18,6 +18,7 @@ export const mockUsers: User[] = [
     firstName: 'John',
     lastName: 'Doe',
     role: 'coach',
+    password: 'password123', // Test password for coach
     avatarUrl: 'https://randomuser.me/api/portraits/men/2.jpg',
     bio: 'Professional life coach with 10+ years of experience helping people achieve their goals.',
     createdAt: new Date('2023-01-05'),
@@ -28,6 +29,7 @@ export const mockUsers: User[] = [
     firstName: 'Mary',
     lastName: 'Smith',
     role: 'coach',
+    password: 'password123', // Test password for second coach
     avatarUrl: 'https://randomuser.me/api/portraits/women/3.jpg',
     bio: 'Career development specialist helping professionals find their dream jobs.',
     createdAt: new Date('2023-01-10'),
@@ -38,6 +40,7 @@ export const mockUsers: User[] = [
     firstName: 'Jane',
     lastName: 'Wilson',
     role: 'client',
+    password: 'password123', // Test password for client
     avatarUrl: 'https://randomuser.me/api/portraits/women/4.jpg',
     createdAt: new Date('2023-01-15'),
   },

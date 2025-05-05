@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { User, UserRole } from '../types';
 import { mockUsers } from '../utils/mockData';
@@ -33,7 +32,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
-  // Login function - simulating API call
+  // Login function - simulating API call with password verification
   const login = async (email: string, password: string) => {
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 800));
@@ -41,11 +40,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Find user in mock data (in a real app, this would be an API call)
     const foundUser = mockUsers.find(u => u.email === email);
     
-    if (foundUser) {
-      // In a real app, you would validate the password here
-      setUser(foundUser);
+    if (foundUser && foundUser.password === password) {
+      // Create a user object without the password field for storage
+      const { password: _, ...userWithoutPassword } = foundUser;
+      
+      setUser(userWithoutPassword);
       setIsAuthenticated(true);
-      localStorage.setItem('user', JSON.stringify(foundUser));
+      localStorage.setItem('user', JSON.stringify(userWithoutPassword));
       toast.success('Login successful!');
     } else {
       toast.error('Invalid credentials');
