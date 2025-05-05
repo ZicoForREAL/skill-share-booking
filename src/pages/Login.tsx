@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import LoginForm from '@/components/auth/LoginForm';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { InfoCircle } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 const Login = () => {
   const { isAuthenticated } = useAuth();
@@ -23,7 +23,7 @@ const Login = () => {
         </div>
         
         <Alert className="mb-6 bg-blue-50 border-blue-200">
-          <InfoCircle className="h-4 w-4 text-blue-500 mr-2" />
+          <Info className="h-4 w-4 text-blue-500 mr-2" />
           <AlertDescription>
             <strong>Test Accounts (all use password: password123)</strong>
             <ul className="mt-2 list-disc pl-5">
